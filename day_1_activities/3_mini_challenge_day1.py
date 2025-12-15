@@ -57,4 +57,32 @@
         #    - Display an error message saying the CPS ID is already taken
 
 
+import student_data2 #imports our data from our other set
 
+student_data = student_data2.students # reference to our dictionary set
+
+create_response = False # Boolean
+Start_New_Response = input("Would you like to add a new response? (Yes or No): ")
+
+if Start_New_Response == "Yes":
+    create_response = True
+else:
+    print("Response N/A")
+
+while create_response: # if create_reponse == true then we are taking responses 
+    for response in student_data2: # Createsa a loop
+        student_ID = int(input("CPS ID?: "))
+
+        if student_ID == :
+            print("ID already in system")
+            break
+
+
+        student_data(First_name)
+        
+        student_data.update(["LName"]) = input("Last Name?: ") #.update could possibly update the list maybe try .appendp
+        student_data.update(["FName"]) = input("First Name?: ") 
+        student_data.update(["HR"]) = input("Homeroom?: ")
+        Grade_Level = int(input("Grade Level?: "))
+        Primary_Email = input("Primary Email?:")
+        Secondary_Email = input("Secondary Email?: ")

@@ -64,25 +64,46 @@ student_data = student_data2.students # reference to our dictionary set
 create_response = False # Boolean
 Start_New_Response = input("Would you like to add a new response? (Yes or No): ")
 
-if Start_New_Response == "Yes":
+if Start_New_Response == "Yes": #this part works
     create_response = True
 else:
-    print("Response N/A")
+    print("Response Declined, Rerun program to add a response")
 
 while create_response: # if create_reponse == true then we are taking responses 
-    for response in student_data2: # Createsa a loop
+    for response in student_data: # Creates a loop to iterate through our data
         student_ID = int(input("CPS ID?: "))
 
-        if student_ID == :
-            print("ID already in system")
+        if student_ID == response.items():
+            print("ID is already in the system, Please Retry")
             break
 
+        student_data[0].update({"CPSID":student_ID}) #Add student ID to dictionary
 
-        student_data(First_name)
+        student_data[0].update(["LName"]) == input("Last Name?: ")
+        student_data[0].update(["FName"]) == input("First Name?: ")
+        student_data[0].update(["MName"]) == input("Middle Name?: ")
+        student_data[0].update(["Combo,Name"]) == (["FName" + "LName"])
+
+        student_data[0].update(["HR"]) == input("Home Room?: ")
+        student_data[0].update(["GL"]) == int(input("Grade Level?: "))
+
+        student_data[0].update(["Email"]) == input("Primary Email?: ") + input("Secondary Email")
+
+
+        print(student_data) #for testing
         
-        student_data.update(["LName"]) = input("Last Name?: ") #.update could possibly update the list maybe try .appendp
-        student_data.update(["FName"]) = input("First Name?: ") 
-        student_data.update(["HR"]) = input("Homeroom?: ")
-        Grade_Level = int(input("Grade Level?: "))
-        Primary_Email = input("Primary Email?:")
-        Secondary_Email = input("Secondary Email?: ")
+        # for key, value in student_data.items():
+        #     if value == "":
+
+
+        
+
+        # student_data.update() == input("Last Name?: ") # we need .update, .append is for adding the student to the dictionary
+        
+
+        # student_data.update(["FName"]) == input("First Name?: ") 
+        # student_data.update(["HR"]) == input("Homeroom?: ")
+        # print(student_data) # To see if it adds it to the dictionary
+        # Grade_Level = int(input("Grade Level?: "))
+        # Primary_Email = input("Primary Email?:")
+        # Secondary_Email = input("Secondary Email?: ")

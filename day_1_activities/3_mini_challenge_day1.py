@@ -60,18 +60,18 @@
 import student_data2 #imports our data from our other set
 student_data = student_data2.students # reference to our dictionary set
 
+def New_Response(): #function for when the person wants to create a new response (needed for the end of the loop as well) 
+    global create_response
+    create_response = False
 
-Start_New_Response = input("Would you like to add a new response? (Yes or No): ")
-
-def New_Response():
-    global create_response 
-    create_response = True # Boolean to create response if the person wants to
+    Start_New_Response = input("Would you like to add a new response? (Yes or No): ") #ask for if they want a new response
 
     if Start_New_Response.lower() == "yes": #this part works
-        create_response = True
+         create_response = True # Boolean to create response if the person wants to
     else:
         print("Response Declined, Rerun program to add a response")
-        create_response = False
+        create_response = False # Boolean to create response if the person wants to
+
 
 New_Response()
 
@@ -79,7 +79,7 @@ while create_response: # if create_reponse == true then we are taking responses
     for response in student_data: # Creates a loop to iterate through our data
         student_ID = int(input("CPS ID?: "))
 
-        if student_ID == response["CPSID"]:
+        if student_ID == response["CPSID"]: #checks if ID's are the same, otherwise it breaks the loop and reruns it
             print("ID is already in the system, Please Retry")
             break
 
@@ -96,9 +96,13 @@ while create_response: # if create_reponse == true then we are taking responses
 
         student_data[-1]["Email"] = input("Primary Email?: ") + ", " + input("Secondary Email?: ")
 
+        student_data.append(response)
+        
         print(student_data) #for testing
-
+      
         New_Response()
+        create_response = False
+
 
 #end
 
